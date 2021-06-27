@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
+import items from './data';
 import Menu from './Menu';
 import Categories from './Categories';
 
 function App() {
+    const [menuItems, setMenuItems] = useState(items);
+    console.log(menuItems)
+
     return (
-        <div>
-            <h2>Hello</h2>
-        </div>
+       <main>
+           <section className="menu section">
+             <div className="title">
+                 <h2>our menu</h2>
+                 <div className="underline"></div>
+             </div>
+             <Menu items={menuItems} />
+           </section>
+       </main>
     )
 }
 
